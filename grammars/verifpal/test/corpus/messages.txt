@@ -1,0 +1,119 @@
+================================================================================
+A guarded value beside an unguarded one
+================================================================================
+
+Alice -> Bob: [ga], e
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (message
+    sender: (principal_name
+      (identifier))
+    (arrow)
+    recipient: (principal_name
+      (identifier))
+    values: (message_values
+      (guarded_constant
+        (constant
+          (identifier)))
+      (constant
+        (identifier)))))
+
+================================================================================
+A unicode arrow
+================================================================================
+
+Alice → Bob: ga
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (message
+    sender: (principal_name
+      (identifier))
+    (arrow)
+    recipient: (principal_name
+      (identifier))
+    values: (message_values
+      (constant
+        (identifier)))))
+
+================================================================================
+Consecutive messages do not merge
+================================================================================
+
+Alice -> Bob: ga
+Bob -> Alice: gb
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (message
+    sender: (principal_name
+      (identifier))
+    (arrow)
+    recipient: (principal_name
+      (identifier))
+    values: (message_values
+      (constant
+        (identifier))))
+  (message
+    sender: (principal_name
+      (identifier))
+    (arrow)
+    recipient: (principal_name
+      (identifier))
+    values: (message_values
+      (constant
+        (identifier)))))
+
+================================================================================
+A value list without commas
+================================================================================
+
+Alice -> Bob: ga gb
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (message
+    sender: (principal_name
+      (identifier))
+    (arrow)
+    recipient: (principal_name
+      (identifier))
+    values: (message_values
+      (constant
+        (identifier))
+      (constant
+        (identifier)))))
+
+================================================================================
+A message before a principal block
+================================================================================
+
+Alice -> Bob: ga
+principal Bob[
+	generates b
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (message
+    sender: (principal_name
+      (identifier))
+    (arrow)
+    recipient: (principal_name
+      (identifier))
+    values: (message_values
+      (constant
+        (identifier))))
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (generates
+      constants: (constant_list
+        (constant
+          (identifier))))))

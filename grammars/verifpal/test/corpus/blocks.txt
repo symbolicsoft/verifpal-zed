@@ -1,0 +1,95 @@
+================================================================================
+An active attacker
+================================================================================
+
+attacker[active]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (attacker_block
+    kind: (attacker_kind)))
+
+================================================================================
+A passive attacker
+================================================================================
+
+attacker[passive]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (attacker_block
+    kind: (attacker_kind)))
+
+================================================================================
+An empty principal block
+================================================================================
+
+attacker[active]
+principal Alice[
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (attacker_block
+    kind: (attacker_kind))
+  (principal_block
+    name: (principal_name
+      (identifier))))
+
+================================================================================
+A principal block written on one line
+================================================================================
+
+attacker[active]
+principal Alice[ knows private m generates n ]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (attacker_block
+    kind: (attacker_kind))
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))))
+    (generates
+      constants: (constant_list
+        (constant
+          (identifier))))))
+
+================================================================================
+A phase block
+================================================================================
+
+attacker[active]
+phase[1]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (attacker_block
+    kind: (attacker_kind))
+  (phase_block
+    number: (number)))
+
+================================================================================
+An empty queries block
+================================================================================
+
+attacker[active]
+queries[
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (attacker_block
+    kind: (attacker_kind))
+  (queries_block))

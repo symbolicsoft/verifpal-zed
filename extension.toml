@@ -8,3 +8,8 @@ version = "1.0.0"
 schema_version = 1
 authors = ["Nadim Kobeissi <nadim@symbolic.software>"]
 repository = "https://github.com/symbolicsoft/verifpal-zed"
+
+[grammars.verifpal]
+repository = "https://github.com/symbolicsoft/verifpal-zed"
+rev = "0000000000000000000000000000000000000000"
+path = "grammars/verifpal"

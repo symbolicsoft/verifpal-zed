@@ -1,0 +1,38 @@
+{
+	"grammars": [
+		{
+			"name": "verifpal",
+			"camelcase": "Verifpal",
+			"scope": "source.verifpal",
+			"path": ".",
+			"file-types": ["vp"],
+			"highlights": ["../../languages/verifpal/highlights.scm"],
+			"injection-regex": "^verifpal$"
+		}
+	],
+	"metadata": {
+		"version": "1.0.0",
+		"license": "GPL-3.0-only",
+		"description": "Verifpal grammar for tree-sitter",
+		"authors": [
+			{
+				"name": "Nadim Kobeissi",
+				"email": "nadim@symbolic.software"
+			}
+		],
+		"links": {
+			"repository": "https://github.com/symbolicsoft/verifpal-zed"
+		}
+	},
+	"bindings": {
+		"c": true,
+		"go": false,
+		"java": false,
+		"kotlin": false,
+		"node": false,
+		"python": false,
+		"rust": true,
+		"swift": false,
+		"zig": false
+	}
+}

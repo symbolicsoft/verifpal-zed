@@ -1,0 +1,847 @@
+[
+  {
+    "type": "argument_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "primitive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "arrow",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "assignment",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant_list",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "attacker_block",
+    "named": true,
+    "fields": {
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "attacker_kind",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "attacker_kind",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "authentication_query",
+    "named": true,
+    "fields": {
+      "constant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "query_options",
+            "named": true
+          }
+        ]
+      },
+      "recipient": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      },
+      "sender": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arrow",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "capabilities",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "capability",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "capability",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "capability_name",
+            "named": true
+          }
+        ]
+      },
+      "onset": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "capability_onset",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "capability_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "capability_onset",
+    "named": true,
+    "fields": {
+      "number": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "confidentiality_query",
+    "named": true,
+    "fields": {
+      "constant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "query_options",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "constant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constant_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "equivalence_query",
+    "named": true,
+    "fields": {
+      "constants": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant_list",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "query_options",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "freshness_query",
+    "named": true,
+    "fields": {
+      "constant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "query_options",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "generates",
+    "named": true,
+    "fields": {
+      "constants": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "guarded_constant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "knows",
+    "named": true,
+    "fields": {
+      "constants": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant_list",
+            "named": true
+          }
+        ]
+      },
+      "qualifier": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "qualifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "leaks",
+    "named": true,
+    "fields": {
+      "constants": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "message",
+    "named": true,
+    "fields": {
+      "recipient": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      },
+      "sender": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      },
+      "values": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "message_values",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arrow",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "message_values",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "guarded_constant",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "phase_block",
+    "named": true,
+    "fields": {
+      "number": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "precondition",
+    "named": true,
+    "fields": {
+      "constant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "recipient": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      },
+      "sender": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arrow",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "primitive",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "argument_list",
+            "named": true
+          }
+        ]
+      },
+      "capabilities": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "capabilities",
+            "named": true
+          }
+        ]
+      },
+      "check": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "check",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "primitive_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "principal_block",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "generates",
+          "named": true
+        },
+        {
+          "type": "knows",
+          "named": true
+        },
+        {
+          "type": "leaks",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "principal_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "qualifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "queries_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "authentication_query",
+          "named": true
+        },
+        {
+          "type": "confidentiality_query",
+          "named": true
+        },
+        {
+          "type": "equivalence_query",
+          "named": true
+        },
+        {
+          "type": "freshness_query",
+          "named": true
+        },
+        {
+          "type": "unlinkability_query",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "query_options",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "precondition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attacker_block",
+          "named": true
+        },
+        {
+          "type": "message",
+          "named": true
+        },
+        {
+          "type": "phase_block",
+          "named": true
+        },
+        {
+          "type": "principal_block",
+          "named": true
+        },
+        {
+          "type": "queries_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unlinkability_query",
+    "named": true,
+    "fields": {
+      "constants": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant_list",
+            "named": true
+          }
+        ]
+      },
+      "options": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "query_options",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "active",
+    "named": false
+  },
+  {
+    "type": "attacker",
+    "named": false
+  },
+  {
+    "type": "authentication?",
+    "named": false
+  },
+  {
+    "type": "check",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "confidentiality?",
+    "named": false
+  },
+  {
+    "type": "equivalence?",
+    "named": false
+  },
+  {
+    "type": "freshness?",
+    "named": false
+  },
+  {
+    "type": "generates",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "knows",
+    "named": false
+  },
+  {
+    "type": "leaks",
+    "named": false
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "passive",
+    "named": false
+  },
+  {
+    "type": "password",
+    "named": false
+  },
+  {
+    "type": "phase",
+    "named": false
+  },
+  {
+    "type": "precondition",
+    "named": false
+  },
+  {
+    "type": "principal",
+    "named": false
+  },
+  {
+    "type": "private",
+    "named": false
+  },
+  {
+    "type": "public",
+    "named": false
+  },
+  {
+    "type": "queries",
+    "named": false
+  },
+  {
+    "type": "unlinkability?",
+    "named": false
+  },
+  {
+    "type": "→",
+    "named": false
+  }
+]

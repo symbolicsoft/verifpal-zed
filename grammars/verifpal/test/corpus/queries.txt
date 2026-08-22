@@ -1,0 +1,93 @@
+================================================================================
+Every query kind
+================================================================================
+
+queries[
+	confidentiality? m
+	authentication? Alice -> Bob: e
+	freshness? n
+	unlinkability? a, b
+	equivalence? k1, k2
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (queries_block
+    (confidentiality_query
+      constant: (constant
+        (identifier)))
+    (authentication_query
+      sender: (principal_name
+        (identifier))
+      (arrow)
+      recipient: (principal_name
+        (identifier))
+      constant: (constant
+        (identifier)))
+    (freshness_query
+      constant: (constant
+        (identifier)))
+    (unlinkability_query
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))))
+    (equivalence_query
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))))))
+
+================================================================================
+A precondition on a confidentiality query
+================================================================================
+
+queries[
+	confidentiality? m[ precondition[ Bob -> Alice: ack ] ]
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (queries_block
+    (confidentiality_query
+      constant: (constant
+        (identifier))
+      options: (query_options
+        (precondition
+          sender: (principal_name
+            (identifier))
+          (arrow)
+          recipient: (principal_name
+            (identifier))
+          constant: (constant
+            (identifier)))))))
+
+================================================================================
+A multi-constant query followed by another query
+================================================================================
+
+queries[
+	unlinkability? a, b
+	equivalence? c, d
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (queries_block
+    (unlinkability_query
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))))
+    (equivalence_query
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))))))

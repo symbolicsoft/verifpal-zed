@@ -1,0 +1,139 @@
+================================================================================
+Every knows qualifier
+================================================================================
+
+principal Alice[
+	knows public c0
+	knows private m
+	knows password pw
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))))))
+
+================================================================================
+A knows list continues across a comma
+================================================================================
+
+principal Alice[
+	knows private m, n, o
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))
+        (constant
+          (identifier))))))
+
+================================================================================
+A knows list stops at the end of its line
+================================================================================
+
+principal Alice[
+	knows private m
+	e = HASH(m)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))
+
+================================================================================
+generates and leaks
+================================================================================
+
+principal Alice[
+	generates a, b
+	leaks a
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (generates
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))))
+    (leaks
+      constants: (constant_list
+        (constant
+          (identifier))))))
+
+================================================================================
+A multi-output assignment
+================================================================================
+
+principal Alice[
+	x, y = SPLIT(m)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))

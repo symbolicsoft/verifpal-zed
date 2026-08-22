@@ -1,0 +1,131 @@
+================================================================================
+Line and block comments
+================================================================================
+
+// a line comment
+/* a block
+   comment */
+attacker[active]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (comment)
+  (comment)
+  (attacker_block
+    kind: (attacker_kind)))
+
+================================================================================
+A comment ends a value list
+================================================================================
+
+principal Alice[
+	knows private m // the secret
+	e = HASH(m)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))))
+    (comment)
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))
+
+================================================================================
+The anonymous constant and nil
+================================================================================
+
+principal Alice[
+	_ = HASH(nil)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))
+
+================================================================================
+A constant may begin with a digit
+================================================================================
+
+principal Alice[
+	generates 1a, k1
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (generates
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))))))
+
+================================================================================
+Capability words are not reserved and may name constants
+================================================================================
+
+principal Alice[
+	knows private weak, forgeable, malleable, from
+	h = HASH(weak)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (knows
+      qualifier: (qualifier)
+      constants: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))
+        (constant
+          (identifier))
+        (constant
+          (identifier))))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))

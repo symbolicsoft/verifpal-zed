@@ -1,0 +1,185 @@
+================================================================================
+A nested primitive
+================================================================================
+
+principal Alice[
+	k = HKDF(CONCAT(a, b), c, d)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (primitive
+            name: (primitive_name
+              (identifier))
+            arguments: (argument_list
+              (constant
+                (identifier))
+              (constant
+                (identifier))))
+          (constant
+            (identifier))
+          (constant
+            (identifier)))))))
+
+================================================================================
+A checked primitive
+================================================================================
+
+principal Bob[
+	d = AEAD_DEC(k, e, ad)?
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier))
+          (constant
+            (identifier))
+          (constant
+            (identifier)))
+        check: (check)))))
+
+================================================================================
+A lowercase primitive name
+================================================================================
+
+principal Alice[
+	h = hash(m)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))
+
+================================================================================
+A single capability
+================================================================================
+
+principal Alice[
+	gk = PUBKEY[weak](k)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        capabilities: (capabilities
+          (capability
+            name: (capability_name)))
+        arguments: (argument_list
+          (constant
+            (identifier)))))))
+
+================================================================================
+Two capabilities, one with a phase onset
+================================================================================
+
+principal Alice[
+	e = AEAD_ENC[weak, forgeable from phase 2](k, m, ad)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        capabilities: (capabilities
+          (capability
+            name: (capability_name))
+          (capability
+            name: (capability_name)
+            onset: (capability_onset
+              number: (number))))
+        arguments: (argument_list
+          (constant
+            (identifier))
+          (constant
+            (identifier))
+          (constant
+            (identifier)))))))
+
+================================================================================
+A capability written in upper case
+================================================================================
+
+principal Alice[
+	e = ENC[MALLEABLE FROM PHASE 1](k, m)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        capabilities: (capabilities
+          (capability
+            name: (capability_name)
+            onset: (capability_onset
+              number: (number))))
+        arguments: (argument_list
+          (constant
+            (identifier))
+          (constant
+            (identifier)))))))
