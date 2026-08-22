@@ -11,7 +11,7 @@ if ! command -v tree-sitter >/dev/null 2>&1; then
 	exit 0
 fi
 
-cd "$root/grammars/verifpal"
+cd "$root/tree-sitter-verifpal"
 
 status=0
 for query in "$root"/languages/verifpal/*.scm; do

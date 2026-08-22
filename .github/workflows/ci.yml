@@ -42,7 +42,7 @@ jobs:
       - name: Regenerate the parser
         run: make grammar
       - name: The committed parser must match grammar.js
-        run: git diff --exit-code -- grammars/verifpal/src
+        run: git diff --exit-code -- tree-sitter-verifpal/src
       - run: make test
       - run: make queries
 

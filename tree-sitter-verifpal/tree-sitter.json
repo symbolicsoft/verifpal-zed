@@ -6,7 +6,7 @@
 			"scope": "source.verifpal",
 			"path": ".",
 			"file-types": ["vp"],
-			"highlights": ["../../languages/verifpal/highlights.scm"],
+			"highlights": ["../languages/verifpal/highlights.scm"],
 			"injection-regex": "^verifpal$"
 		}
 	],

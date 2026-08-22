@@ -26,7 +26,7 @@ if [ "$count" -eq 0 ]; then
 	exit 1
 fi
 
-cd "$root/grammars/verifpal"
+cd "$root/tree-sitter-verifpal"
 
 output="$(printf '%s\n' "$models" | xargs tree-sitter parse --quiet --stat 2>&1 || true)"
 failed="$(printf '%s\n' "$output" | sed -n 's/.*failed parses: \([0-9]*\);.*/\1/p')"

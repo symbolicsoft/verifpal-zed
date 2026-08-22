@@ -1,6 +1,8 @@
 target/
 docs/
 node_modules/
-grammars/verifpal/build/
-grammars/verifpal/.build/
 __pycache__/
+grammars/
+extension.wasm
+tree-sitter-verifpal/build/
+tree-sitter-verifpal/.build/

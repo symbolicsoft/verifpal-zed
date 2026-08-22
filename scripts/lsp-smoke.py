@@ -10,7 +10,7 @@ import sys
 import threading
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-MODEL = ROOT / "grammars" / "verifpal" / "test" / "sample.vp"
+MODEL = ROOT / "tree-sitter-verifpal" / "test" / "sample.vp"
 TIMEOUT = 120
 
 

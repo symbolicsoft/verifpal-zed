@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: © 2019-2026 Nadim Kobeissi <nadim@symbolic.software>
 # SPDX-License-Identifier: GPL-3.0-only
 
-GRAMMAR := grammars/verifpal
+GRAMMAR := tree-sitter-verifpal
 TARGET  := wasm32-wasip2
 REPO    := https://github.com/symbolicsoft/verifpal-zed
 
