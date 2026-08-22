@@ -5,7 +5,7 @@ GRAMMAR := grammars/verifpal
 TARGET  := wasm32-wasip2
 REPO    := https://github.com/symbolicsoft/verifpal-zed
 
-.PHONY: all build grammar test conformance lint fmt check dev release-grammar clean
+.PHONY: all build grammar test queries conformance lint fmt check dev release-grammar clean
 
 all: check
 
@@ -19,6 +19,9 @@ grammar:
 test:
 	@cd $(GRAMMAR) && tree-sitter test
 
+queries:
+	@scripts/queries.sh
+
 conformance:
 	@scripts/conformance.sh
 
@@ -29,7 +32,7 @@ lint:
 fmt:
 	@cargo fmt
 
-check: lint grammar test conformance build
+check: lint grammar test queries conformance build
 
 dev:
 	@scripts/grammar-source.sh "file://$(CURDIR)"

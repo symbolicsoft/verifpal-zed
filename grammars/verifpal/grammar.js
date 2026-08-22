@@ -130,7 +130,11 @@ module.exports = grammar({
 			choice(anyCase("weak"), anyCase("forgeable"), anyCase("malleable")),
 
 		capability_onset: ($) =>
-			seq(anyCase("from"), anyCase("phase"), field("number", $.number)),
+			seq(
+				alias(anyCase("from"), "from"),
+				alias(anyCase("phase"), "phase"),
+				field("number", $.number),
+			),
 
 		queries_block: ($) => seq("queries", "[", repeat($._query), "]"),
 

@@ -656,12 +656,22 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PATTERN",
-          "value": "[fF][rR][oO][mM]"
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[fF][rR][oO][mM]"
+          },
+          "named": false,
+          "value": "from"
         },
         {
-          "type": "PATTERN",
-          "value": "[pP][hH][aA][sS][eE]"
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[pP][hH][aA][sS][eE]"
+          },
+          "named": false,
+          "value": "phase"
         },
         {
           "type": "FIELD",

@@ -1,0 +1,53 @@
+// SPDX-FileCopyrightText: © 2019-2026 Nadim Kobeissi <nadim@symbolic.software>
+// SPDX-License-Identifier: GPL-3.0-only
+
+/* Every construct the grammar knows, in one model that Verifpal accepts,
+   so the queries can be validated against something that uses all of them. */
+
+attacker[active]
+
+principal Alice[
+	knows public c0
+	knows private m, weak
+	generates a
+	ga = PUBKEY(a)
+	_ = HASH(m)
+]
+
+Alice -> Bob: [ga]
+
+principal Bob[
+	knows public c0
+	generates b
+	gb = PUBKEY(b)
+	k = DH_KEX(ga, b)
+	e = AEAD_ENC[weak, forgeable](k, c0, c0)
+	n = ENC[malleable](k, c0)
+	s = SIGN[forgeable from phase 1](b, e)
+	leaks n
+]
+
+Bob -> Alice: gb, e, s
+
+principal Alice[
+	ka = DH_KEX(gb, a)
+	d = AEAD_DEC(ka, e, c0)?
+	_ = SIGNVERIF(gb, e, s)?
+	x, y = SPLIT(CONCAT(m, nil))
+]
+
+phase[1]
+
+Alice → Bob: [x], y
+
+principal Bob[
+	v = MAC(k, x)
+]
+
+queries[
+	confidentiality? m
+	authentication? Bob -> Alice: e
+	freshness? a[ precondition[ Bob -> Alice: e ] ]
+	unlinkability? x, y
+	equivalence? x, y
+]

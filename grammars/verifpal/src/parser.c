@@ -132,8 +132,8 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_capability_name_token1] = "capability_name_token1",
   [aux_sym_capability_name_token2] = "capability_name_token2",
   [aux_sym_capability_name_token3] = "capability_name_token3",
-  [aux_sym_capability_onset_token1] = "capability_onset_token1",
-  [aux_sym_capability_onset_token2] = "capability_onset_token2",
+  [aux_sym_capability_onset_token1] = "from",
+  [aux_sym_capability_onset_token2] = "phase",
   [anon_sym_queries] = "queries",
   [anon_sym_confidentiality_QMARK] = "confidentiality\?",
   [anon_sym_freshness_QMARK] = "freshness\?",
@@ -220,7 +220,7 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_capability_name_token2] = aux_sym_capability_name_token2,
   [aux_sym_capability_name_token3] = aux_sym_capability_name_token3,
   [aux_sym_capability_onset_token1] = aux_sym_capability_onset_token1,
-  [aux_sym_capability_onset_token2] = aux_sym_capability_onset_token2,
+  [aux_sym_capability_onset_token2] = anon_sym_phase,
   [anon_sym_queries] = anon_sym_queries,
   [anon_sym_confidentiality_QMARK] = anon_sym_confidentiality_QMARK,
   [anon_sym_freshness_QMARK] = anon_sym_freshness_QMARK,
@@ -385,11 +385,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = false,
   },
   [aux_sym_capability_onset_token1] = {
-    .visible = false,
+    .visible = true,
     .named = false,
   },
   [aux_sym_capability_onset_token2] = {
-    .visible = false,
+    .visible = true,
     .named = false,
   },
   [anon_sym_queries] = {

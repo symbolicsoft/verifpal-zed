@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: © 2019-2026 Nadim Kobeissi <nadim@symbolic.software>
+# SPDX-License-Identifier: GPL-3.0-only
+
+name = "Verifpal"
+grammar = "verifpal"
+path_suffixes = ["vp"]
+line_comments = ["// "]
+hard_tabs = true
+tab_size = 4
+autoclose_before = ",)]"
+word_characters = ["_"]
+brackets = [
+	{ start = "[", end = "]", close = true, newline = true },
+	{ start = "(", end = ")", close = true, newline = false },
+	{ start = "/*", end = " */", close = true, newline = false, not_in = ["comment"] },
+]
+
+[block_comment]
+start = "/* "
+end = " */"
+prefix = "*"
+tab_size = 1
