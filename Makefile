@@ -5,7 +5,7 @@ GRAMMAR := tree-sitter-verifpal
 TARGET  := wasm32-wasip2
 REPO    := https://github.com/symbolicsoft/verifpal-zed
 
-.PHONY: all build grammar test queries conformance lsp-test lint fmt check dev release-grammar clean
+.PHONY: all build grammar test queries conformance lsp-test lint fmt check dev release-grammar prepublish clean
 
 all: check
 
@@ -42,6 +42,9 @@ dev:
 
 release-grammar:
 	@scripts/grammar-source.sh "$(REPO)"
+
+prepublish: check
+	@scripts/prepublish.sh
 
 clean:
 	@$(RM) -rf target $(GRAMMAR)/build

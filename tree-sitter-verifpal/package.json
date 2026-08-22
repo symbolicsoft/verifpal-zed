@@ -5,7 +5,6 @@
 	"license": "GPL-3.0-only",
 	"author": "Nadim Kobeissi <nadim@symbolic.software>",
 	"repository": "https://github.com/symbolicsoft/verifpal-zed",
-	"main": "bindings/node",
 	"files": [
 		"grammar.js",
 		"tree-sitter.json",

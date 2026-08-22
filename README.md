@@ -132,7 +132,9 @@ make lint           # cargo fmt --check and clippy
 make check          # all of the above, which is what CI runs
 ```
 
-To try a change, run `make dev` — it points `extension.toml` at this working copy — and then install the directory with `zed: install dev extension`. Run `make release-grammar` before committing to put the published grammar source back.
+To try a change, run `make dev` — it points `extension.toml` at this working copy — and then install the directory with `zed: install dev extension`. Zed clones the grammar at the pinned commit rather than reading the working tree, so commit a grammar change and re-run `make dev` before reinstalling.
+
+To publish, run `make prepublish`. It runs everything above and then audits the extension against Zed's [publishing prerequisites](https://zed.dev/docs/extensions/publishing/prerequisites) and [license requirements](https://zed.dev/docs/extensions/publishing/license-requirements): that the id is kebab-cased and free of reserved words, that `extension.toml` and `Cargo.toml` agree on the version, that the grammar is pinned to a pushed commit over https rather than to a local checkout, that the licence is one Zed's validator accepts, and that no build artifacts are committed. What it cannot check is the first prerequisite — that you have installed this exact commit in Zed and tried it.
 
 `make conformance` is the check worth knowing about. It parses all 366 models that ship with Verifpal and fails on a single error node, which is what keeps the grammar honest about a language it does not itself define. `make lsp-test` is the other one: it drives a real language server through the whole analysis sequence the code lens triggers, so the extension's central claim is tested rather than asserted here.
 

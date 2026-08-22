@@ -5,8 +5,12 @@
 			"camelcase": "Verifpal",
 			"scope": "source.verifpal",
 			"path": ".",
-			"file-types": ["vp"],
-			"highlights": ["../languages/verifpal/highlights.scm"],
+			"file-types": [
+				"vp"
+			],
+			"highlights": [
+				"../languages/verifpal/highlights.scm"
+			],
 			"injection-regex": "^verifpal$"
 		}
 	],
@@ -25,13 +29,13 @@
 		}
 	},
 	"bindings": {
-		"c": true,
+		"c": false,
 		"go": false,
 		"java": false,
 		"kotlin": false,
 		"node": false,
 		"python": false,
-		"rust": true,
+		"rust": false,
 		"swift": false,
 		"zig": false
 	}
