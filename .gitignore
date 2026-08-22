@@ -3,3 +3,4 @@ docs/
 node_modules/
 grammars/verifpal/build/
 grammars/verifpal/.build/
+__pycache__/
