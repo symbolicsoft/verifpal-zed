@@ -5,7 +5,7 @@ GRAMMAR := grammars/verifpal
 TARGET  := wasm32-wasip2
 REPO    := https://github.com/symbolicsoft/verifpal-zed
 
-.PHONY: all build grammar test queries conformance lint fmt check dev release-grammar clean
+.PHONY: all build grammar test queries conformance lsp-test lint fmt check dev release-grammar clean
 
 all: check
 
@@ -25,6 +25,9 @@ queries:
 conformance:
 	@scripts/conformance.sh
 
+lsp-test:
+	@scripts/lsp-test.sh
+
 lint:
 	@cargo fmt --check
 	@cargo clippy --all-targets -- -D warnings
@@ -32,7 +35,7 @@ lint:
 fmt:
 	@cargo fmt
 
-check: lint grammar test queries conformance build
+check: lint grammar test queries conformance lsp-test build
 
 dev:
 	@scripts/grammar-source.sh "file://$(CURDIR)"

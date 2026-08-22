@@ -12,8 +12,8 @@ repository = "https://github.com/symbolicsoft/verifpal-zed"
 snippets = ["./snippets/verifpal.json"]
 
 [grammars.verifpal]
-repository = "https://github.com/symbolicsoft/verifpal-zed"
-rev = "0000000000000000000000000000000000000000"
+repository = "file:///Users/nadim/Code/symbolic/verifpal/verifpal-zed"
+rev = "af7877ee658ddc54462380f86427549936c57938"
 path = "grammars/verifpal"
 
 [language_servers.verifpal]
