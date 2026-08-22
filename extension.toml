@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: © 2019-2026 Nadim Kobeissi <nadim@symbolic.software>
+# SPDX-License-Identifier: GPL-3.0-only
+
+id = "verifpal"
+name = "Verifpal"
+description = "Verifpal language support: highlighting, the language server built into the Verifpal binary, snippets and tasks."
+version = "1.0.0"
+schema_version = 1
+authors = ["Nadim Kobeissi <nadim@symbolic.software>"]
+repository = "https://github.com/symbolicsoft/verifpal-zed"
