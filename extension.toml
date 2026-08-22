@@ -12,8 +12,8 @@ repository = "https://github.com/symbolicsoft/verifpal-zed"
 snippets = ["./snippets/verifpal.json"]
 
 [grammars.verifpal]
-repository = "file:///Users/nadim/Code/symbolic/verifpal/verifpal-zed"
-rev = "2fd2b86b8428db5f5e1fe3e6a0a12357f47a6e53"
+repository = "https://github.com/symbolicsoft/verifpal-zed"
+rev = "e5292cba9f0e9e7bd0af63035bb0bd26021175f6"
 path = "tree-sitter-verifpal"
 
 [language_servers.verifpal]
