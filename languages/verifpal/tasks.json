@@ -1,0 +1,57 @@
+[
+	{
+		"label": "Verifpal: verify model",
+		"command": "verifpal",
+		"args": ["verify", "$ZED_FILE"],
+		"tags": ["verifpal-verify"],
+		"save": "current",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "Verifpal: verify model (one session)",
+		"command": "verifpal",
+		"args": ["verify", "--sessions", "1", "$ZED_FILE"],
+		"save": "current",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "Verifpal: verify model (result code only)",
+		"command": "verifpal",
+		"args": ["verify", "--result-code", "--quiet", "$ZED_FILE"],
+		"save": "current",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "Verifpal: show protocol diagram",
+		"command": "out=\"$(dirname \"$(mktemp -u)\")/verifpal-$ZED_STEM.md\"; { printf '```mermaid\\n'; verifpal diagram \"$ZED_FILE\" --color never; printf '```\\n'; } > \"$out\" && { zed \"$out\" 2>/dev/null || echo \"Diagram written to $out\"; }",
+		"save": "current",
+		"reveal": "always",
+		"hide": "on_success"
+	},
+	{
+		"label": "Verifpal: format model",
+		"command": "verifpal",
+		"args": ["pretty", "--write", "$ZED_FILE"],
+		"save": "current",
+		"reveal": "always",
+		"hide": "on_success"
+	},
+	{
+		"label": "Verifpal: check formatting",
+		"command": "verifpal",
+		"args": ["pretty", "--check", "$ZED_FILE"],
+		"save": "current",
+		"reveal": "always"
+	},
+	{
+		"label": "Verifpal: show version and path",
+		"command": "command -v verifpal || echo 'verifpal is not on your PATH; set lsp.verifpal.binary.path in your Zed settings'; verifpal about",
+		"reveal": "always"
+	}
+]

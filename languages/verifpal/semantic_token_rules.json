@@ -1,0 +1,52 @@
+[
+	{
+		"token_type": "namespace",
+		"style": ["type"]
+	},
+	{
+		"token_type": "function",
+		"token_modifiers": ["defaultLibrary"],
+		"style": ["function"]
+	},
+	{
+		"token_type": "function",
+		"style": ["function"]
+	},
+	{
+		"token_type": "decorator",
+		"style": ["attribute", "keyword"]
+	},
+	{
+		"token_type": "parameter",
+		"style": ["attribute", "keyword"]
+	},
+	{
+		"token_type": "type",
+		"style": ["keyword"]
+	},
+	{
+		"token_type": "keyword",
+		"style": ["keyword"]
+	},
+	{
+		"token_type": "variable",
+		"token_modifiers": ["declaration"],
+		"style": ["variable.special", "variable"]
+	},
+	{
+		"token_type": "variable",
+		"style": ["variable"]
+	},
+	{
+		"token_type": "number",
+		"style": ["number"]
+	},
+	{
+		"token_type": "operator",
+		"style": ["operator"]
+	},
+	{
+		"token_type": "comment",
+		"style": ["comment"]
+	}
+]
