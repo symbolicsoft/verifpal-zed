@@ -140,10 +140,6 @@ To publish, run `make prepublish`. It runs everything above and then audits the 
 
 The extension has no unit tests, because it has almost nothing to unit test. The language lives in the engine, and the extension asks.
 
-## Discussion
-
-Sign up to the [Verifpal Mailing List](https://lists.symbolic.software/mailman/listinfo/verifpal) to stay informed on the latest news and announcements regarding Verifpal, and to participate in Verifpal discussions.
-
 ## License
 
 Verifpal and Verifpal for Zed are published by Symbolic Software. They are provided as free and open source software, licensed under the [GNU General Public License, version 3](https://www.gnu.org/licenses/gpl-3.0.en.html). The Verifpal User Manual is provided under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/) license.
