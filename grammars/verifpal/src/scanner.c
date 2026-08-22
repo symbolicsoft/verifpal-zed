@@ -3,8 +3,6 @@
 
 #include "tree_sitter/parser.h"
 
-#include <string.h>
-
 enum TokenType {
 	LIST_CONTINUES,
 };
@@ -15,6 +13,17 @@ static const char *const BLOCK_KEYWORDS[] = {
 
 #define BLOCK_KEYWORD_COUNT (sizeof(BLOCK_KEYWORDS) / sizeof(BLOCK_KEYWORDS[0]))
 #define WORD_CAPACITY 16
+
+static bool same_word(const char *a, const char *b) {
+	while (*a != '\0' && *b != '\0') {
+		if (*a != *b) {
+			return false;
+		}
+		a++;
+		b++;
+	}
+	return *a == *b;
+}
 
 static bool is_word_character(int32_t c) {
 	return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') ||
@@ -107,7 +116,7 @@ bool tree_sitter_verifpal_external_scanner_scan(void *payload, TSLexer *lexer,
 	if (length < WORD_CAPACITY) {
 		word[length] = '\0';
 		for (size_t i = 0; i < BLOCK_KEYWORD_COUNT; i++) {
-			if (strcmp(word, BLOCK_KEYWORDS[i]) == 0) {
+			if (same_word(word, BLOCK_KEYWORDS[i])) {
 				return false;
 			}
 		}
