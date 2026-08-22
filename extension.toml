@@ -15,3 +15,7 @@ snippets = ["./snippets/verifpal.json"]
 repository = "https://github.com/symbolicsoft/verifpal-zed"
 rev = "0000000000000000000000000000000000000000"
 path = "grammars/verifpal"
+
+[language_servers.verifpal]
+name = "Verifpal"
+languages = ["Verifpal"]
