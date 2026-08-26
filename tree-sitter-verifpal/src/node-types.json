@@ -662,6 +662,73 @@
     }
   },
   {
+    "type": "scenario",
+    "named": true,
+    "fields": {
+      "principal": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "principal_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "scenario_binding",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scenario_binding",
+    "named": true,
+    "fields": {
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "scenarios_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "scenario",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -688,6 +755,10 @@
         },
         {
           "type": "queries_block",
+          "named": true
+        },
+        {
+          "type": "scenarios_block",
           "named": true
         }
       ]
@@ -838,6 +909,10 @@
   },
   {
     "type": "queries",
+    "named": false
+  },
+  {
+    "type": "scenarios",
     "named": false
   },
   {

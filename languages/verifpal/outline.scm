@@ -30,6 +30,12 @@
 (assignment
 	left: (constant_list) @name) @item
 
+(scenarios_block
+	"scenarios" @name) @item
+
+(scenario
+	principal: (principal_name) @name) @item
+
 (queries_block
 	"queries" @name) @item
 

@@ -33,6 +33,7 @@
 	"attacker"
 	"principal"
 	"queries"
+	"scenarios"
 	"knows"
 	"generates"
 	"leaks"

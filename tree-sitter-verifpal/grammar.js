@@ -30,6 +30,7 @@ module.exports = grammar({
 			seq(
 				optional($.attacker_block),
 				repeat($._block),
+				optional($.scenarios_block),
 				optional($.queries_block),
 			),
 
@@ -135,6 +136,20 @@ module.exports = grammar({
 				alias(anyCase("phase"), "phase"),
 				field("number", $.number),
 			),
+
+		scenarios_block: ($) => seq("scenarios", "[", repeat($.scenario), "]"),
+
+		scenario: ($) =>
+			seq(
+				field("principal", $.principal_name),
+				"[",
+				$.scenario_binding,
+				repeat(seq(",", $.scenario_binding)),
+				"]",
+			),
+
+		scenario_binding: ($) =>
+			seq(field("target", $.constant), "=", field("value", $.constant)),
 
 		queries_block: ($) => seq("queries", "[", repeat($._query), "]"),
 
