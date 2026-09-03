@@ -114,9 +114,9 @@
 	},
 	"Query with precondition": {
 		"prefix": "precondition",
-		"description": "Annotate a failing query with a message that is sent anyway.",
+		"description": "Restrict a query to the executions in which a message is sent.",
 		"body": [
-			"${1|confidentiality,freshness|}? ${2:value}[ precondition[ ${3:Bob} -> ${4:Alice}: ${5:ack} ] ]"
+			"${1|confidentiality,authentication,freshness,unlinkability,equivalence|}? ${2:value}[ precondition[ ${3:Alice} -> ${4:Bob}: ${5:done} ] ]"
 		]
 	},
 	"Diffie-Hellman exchange": {
