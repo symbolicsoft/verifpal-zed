@@ -884,10 +884,6 @@
     "named": false
   },
   {
-    "type": "password",
-    "named": false
-  },
-  {
     "type": "phase",
     "named": false
   },

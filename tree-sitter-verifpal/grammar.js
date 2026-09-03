@@ -83,7 +83,7 @@ module.exports = grammar({
 				field("constants", $.constant_list),
 			),
 
-		qualifier: (_) => choice("public", "private", "password"),
+		qualifier: (_) => choice("public", "private"),
 
 		generates: ($) => seq("generates", field("constants", $.constant_list)),
 

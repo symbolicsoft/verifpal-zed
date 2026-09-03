@@ -5,7 +5,6 @@ Every knows qualifier
 principal Alice[
 	knows public c0
 	knows private m
-	knows password pw
 ]
 
 --------------------------------------------------------------------------------
@@ -14,11 +13,6 @@ principal Alice[
   (principal_block
     name: (principal_name
       (identifier))
-    (knows
-      qualifier: (qualifier)
-      constants: (constant_list
-        (constant
-          (identifier))))
     (knows
       qualifier: (qualifier)
       constants: (constant_list

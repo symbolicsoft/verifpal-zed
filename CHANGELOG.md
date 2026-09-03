@@ -16,7 +16,7 @@ server built into the Verifpal binary. **Requires Verifpal 1.1 or newer and Zed
 - A tree-sitter grammar for Verifpal, written against the engine's own parser
   rather than adapted from the Visual Studio Code TextMate grammar. It names no
   primitives: Verifpal has no user-defined functions, so any identifier in call
-  position is one, and the list of 25 names that drifts whenever the engine's
+  position is one, and the list of 24 names that drifts whenever the engine's
   primitive table changes does not exist here. Its only hard-coded names are the
   structural block and query keywords, which the language could not be described
   without.
