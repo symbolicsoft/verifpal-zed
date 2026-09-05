@@ -38,7 +38,7 @@ A checked primitive
 ================================================================================
 
 principal Bob[
-	d = AEAD_DEC(k, e, ad)?
+	d = AEAD_DEC(k, n, e, ad)?
 ]
 
 --------------------------------------------------------------------------------
@@ -55,6 +55,8 @@ principal Bob[
         name: (primitive_name
           (identifier))
         arguments: (argument_list
+          (constant
+            (identifier))
           (constant
             (identifier))
           (constant
@@ -121,7 +123,7 @@ Two capabilities, one with a phase onset
 ================================================================================
 
 principal Alice[
-	e = AEAD_ENC[weak, forgeable from phase 2](k, m, ad)
+	e = AEAD_ENC[weak, forgeable from phase 2](k, n, m, ad)
 ]
 
 --------------------------------------------------------------------------------
@@ -145,6 +147,8 @@ principal Alice[
             onset: (capability_onset
               number: (number))))
         arguments: (argument_list
+          (constant
+            (identifier))
           (constant
             (identifier))
           (constant

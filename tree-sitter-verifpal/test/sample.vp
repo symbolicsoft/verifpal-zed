@@ -21,17 +21,18 @@ principal Bob[
 	generates b
 	gb = PUBKEY(b)
 	k = DH_KEX(ga, b)
-	e = AEAD_ENC[weak, forgeable](k, c0, c0)
+	generates n_e
+	e = AEAD_ENC[weak, forgeable](k, n_e, c0, c0)
 	n = ENC[malleable](k, c0)
 	s = SIGN[forgeable from phase 1](b, e)
 	leaks n
 ]
 
-Bob -> Alice: gb, e, s
+Bob -> Alice: gb, n_e, e, s
 
 principal Alice[
 	ka = DH_KEX(gb, a)
-	d = AEAD_DEC(ka, e, c0)?
+	d = AEAD_DEC(ka, n_e, e, c0)?
 	_ = SIGNVERIF(gb, e, s)?
 	x, y = SPLIT(CONCAT(m, nil))
 ]
