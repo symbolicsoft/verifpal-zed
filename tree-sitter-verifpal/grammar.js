@@ -119,7 +119,9 @@ module.exports = grammar({
 
 		_value: ($) => choice($.primitive, $.constant),
 
-		capabilities: ($) => seq("[", looseList($.capability), "]"),
+		capabilities: ($) => seq("[", looseList(choice($.threshold, $.capability)), "]"),
+
+		threshold: ($) => $.number,
 
 		capability: ($) =>
 			seq(

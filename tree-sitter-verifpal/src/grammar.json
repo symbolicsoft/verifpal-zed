@@ -590,8 +590,17 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "capability"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "threshold"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "capability"
+                  }
+                ]
               },
               {
                 "type": "CHOICE",
@@ -613,6 +622,10 @@
           "value": "]"
         }
       ]
+    },
+    "threshold": {
+      "type": "SYMBOL",
+      "name": "number"
     },
     "capability": {
       "type": "SEQ",

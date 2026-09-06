@@ -54,6 +54,8 @@
 
 (capability_name) @attribute
 
+(threshold) @number
+
 (capability_onset
 	[
 		"from"

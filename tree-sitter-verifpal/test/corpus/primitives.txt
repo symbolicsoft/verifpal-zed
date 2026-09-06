@@ -187,3 +187,55 @@ principal Alice[
             (identifier))
           (constant
             (identifier)))))))
+
+================================================================================
+A threshold beside a capability
+================================================================================
+
+principal Dealer[
+	s1, s2, s3 = THRESHOLD_SPLIT[2](k)
+	p = THRESHOLD_SIGN[forgeable](s1, n, cl, m)
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (principal_block
+    name: (principal_name
+      (identifier))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier))
+        (constant
+          (identifier))
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        capabilities: (capabilities
+          (threshold
+            (number)))
+        arguments: (argument_list
+          (constant
+            (identifier)))))
+    (assignment
+      left: (constant_list
+        (constant
+          (identifier)))
+      right: (primitive
+        name: (primitive_name
+          (identifier))
+        capabilities: (capabilities
+          (capability
+            name: (capability_name)))
+        arguments: (argument_list
+          (constant
+            (identifier))
+          (constant
+            (identifier))
+          (constant
+            (identifier))
+          (constant
+            (identifier)))))))

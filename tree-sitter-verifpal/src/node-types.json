@@ -137,6 +137,10 @@
         {
           "type": "capability",
           "named": true
+        },
+        {
+          "type": "threshold",
+          "named": true
         }
       ]
     }
@@ -759,6 +763,21 @@
         },
         {
           "type": "scenarios_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "threshold",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
           "named": true
         }
       ]

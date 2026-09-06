@@ -158,6 +158,28 @@
 			"${1:s} = SIGN(${2:sk}, ${3:m})"
 		]
 	},
+	"Threshold secret sharing": {
+		"prefix": "threshold",
+		"description": "Share a secret so that any t of the n bound shares recover it; THRESHOLD_JOIN over t distinct shares gives it back.",
+		"body": [
+			"${1:s1}, ${2:s2}, ${3:s3} = THRESHOLD_SPLIT[${4:2}](${5:k})"
+		]
+	},
+	"Threshold join": {
+		"prefix": "join",
+		"description": "Interpolate t shares into the secret, or t partial signatures into SIGN(k, m).",
+		"body": [
+			"${1:k} = THRESHOLD_JOIN(${2:s1}, ${3:s2})"
+		]
+	},
+	"Threshold partial signature": {
+		"prefix": "tsign",
+		"description": "A FROST partial: share, fresh nonce, the coordinator's commitment list, and the message.",
+		"body": [
+			"generates ${2:n}",
+			"${1:p} = THRESHOLD_SIGN(${3:share}, ${2:n}, ${4:cl}, ${5:m})"
+		]
+	},
 	"Weakening assumption": {
 		"prefix": "weak",
 		"description": "Declare that a primitive at this call site is broken for the attacker.",
