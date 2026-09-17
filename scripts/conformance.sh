@@ -18,7 +18,7 @@ if [ ! -d "$examples" ]; then
 	exit 0
 fi
 
-models="$(find "$examples" -name '*.vp' | sort)"
+models="$(find "$examples" -name '*.vp' ! -path '*/test/err_*.vp' | sort)"
 count="$(printf '%s\n' "$models" | grep -c . || true)"
 
 if [ "$count" -eq 0 ]; then
