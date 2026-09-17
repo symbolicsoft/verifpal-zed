@@ -13,7 +13,7 @@ snippets = ["./snippets/verifpal.json"]
 
 [grammars.verifpal]
 repository = "https://github.com/symbolicsoft/verifpal-zed"
-rev = "e5292cba9f0e9e7bd0af63035bb0bd26021175f6"
+rev = "3aabdea36efa86084617ef24e588a22b1ed1d6cf"
 path = "tree-sitter-verifpal"
 
 [language_servers.verifpal]
