@@ -116,7 +116,7 @@
 		"prefix": "precondition",
 		"description": "Restrict a query to the executions in which a message is sent.",
 		"body": [
-			"${1|confidentiality,authentication,freshness,unlinkability,equivalence|}? ${2:value}[ precondition[ ${3:Alice} -> ${4:Bob}: ${5:done} ] ]"
+			"${1|confidentiality,freshness|}? ${2:value}[ precondition[ ${3:Alice} -> ${4:Bob}: ${5:done} ] ]"
 		]
 	},
 	"Diffie-Hellman exchange": {

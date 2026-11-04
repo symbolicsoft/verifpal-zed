@@ -44,7 +44,7 @@ Syntax highlighting and error checking are available immediately on `.vp` files.
 
 A `Run attacker analysis` action then appears above the `queries` block of any model. Clicking it runs the analysis in the language server, so the editor stays usable while it works; Zed shows its progress, and when it finishes each query's verdict lands on the query itself — an error where the attacker contradicted the query, a hint where it held.
 
-By default Verifpal analyses each principal running two concurrent sessions. **A query that holds is a query for which no attack was found within that bound, not one that holds in general.** Session replication costs roughly four times the work, so for a model too large to afford it, run the `Verifpal: verify model (one session)` task instead.
+By default Verifpal analyses each principal running two concurrent sessions. **A query that holds is a query for which no attack was found within that bound, not one that holds in general.** Session replication can make an analysis many times slower, since its cost grows steeply with the number of principals replicated, so for a model too large to afford it, run the `Verifpal: verify model (one session)` task instead.
 
 ### Hovering, completing and navigating
 
@@ -136,7 +136,7 @@ To try a change, run `make dev` — it points `extension.toml` at this working c
 
 To publish, run `make prepublish`. It runs everything above and then audits the extension against Zed's [publishing prerequisites](https://zed.dev/docs/extensions/publishing/prerequisites) and [license requirements](https://zed.dev/docs/extensions/publishing/license-requirements): that the id is kebab-cased and free of reserved words, that `extension.toml` and `Cargo.toml` agree on the version, that the grammar is pinned to a pushed commit over https rather than to a local checkout, that the licence is one Zed's validator accepts, and that no build artifacts are committed. What it cannot check is the first prerequisite — that you have installed this exact commit in Zed and tried it.
 
-`make conformance` is the check worth knowing about. It parses all 366 models that ship with Verifpal and fails on a single error node, which is what keeps the grammar honest about a language it does not itself define. `make lsp-test` is the other one: it drives a real language server through the whole analysis sequence the code lens triggers, so the extension's central claim is tested rather than asserted here.
+`make conformance` is the check worth knowing about. It parses every model that ships with Verifpal, apart from the `err_` tests that exist to be rejected, and fails on a single error node, which is what keeps the grammar honest about a language it does not itself define. `make lsp-test` is the other one: it drives a real language server through the whole analysis sequence the code lens triggers, so the extension's central claim is tested rather than asserted here.
 
 The extension has no unit tests, because it has almost nothing to unit test. The language lives in the engine, and the extension asks.
 
